@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.magic</groupId>
-	<artifactId>demo</artifactId>
+	<artifactId>MagicDB</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>demo</name>
+	<name>MagicDB</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>

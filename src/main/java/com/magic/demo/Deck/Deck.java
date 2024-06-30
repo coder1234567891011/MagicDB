@@ -3,9 +3,17 @@ package com.magic.demo.Deck;
 import com.magic.demo.Card.Card;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 
 @Entity
 public class Deck {
+
+    private @Id
+    @GeneratedValue Long id;
+
+    @OneToMany
     private Card[] cardList;
     private String Format;
 

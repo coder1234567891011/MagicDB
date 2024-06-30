@@ -1,7 +1,10 @@
 package com.magic.demo.Player;
 
+import java.beans.JavaBean;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 
-interface PlayerRepository extends JpaRepository<Player, Long>{ 
+@JavaBean
+public interface PlayerRepository extends JpaRepository<Player, Long>{ 
     
 }

@@ -1,10 +1,13 @@
 package com.magic.demo.Card;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
 
 @Entity
 public class Card {
-    
+    private @Id
+    @GeneratedValue Long id;
     private String name;
     private String version;
 
