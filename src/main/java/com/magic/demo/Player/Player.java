@@ -1,5 +1,7 @@
 package com.magic.demo.Player;
 
+import java.util.List;
+
 import com.magic.demo.Deck.Deck;
 
 import jakarta.persistence.Entity;
@@ -15,12 +17,12 @@ public class Player {
     
     private String userName;
     @OneToMany
-    private Deck[] deckList;
+    private List<Deck> deckList;
 
-    public Deck[] getDeckList() {
+    public List<Deck> getDeckList() {
         return deckList;
     }
-    public void setDeckList(Deck[] deckList) {
+    public void setDeckList(List<Deck> deckList) {
         this.deckList = deckList;
     }
     public String getUserName() {
