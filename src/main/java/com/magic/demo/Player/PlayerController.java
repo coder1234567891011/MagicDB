@@ -11,14 +11,10 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.magic.demo.Deck.Deck;
-import com.magic.demo.Deck.DeckRepository;
-
 @RestController
 public class PlayerController {
 
     private PlayerRepository repository;
-    private DeckRepository deckRepository;
     public Logger log = LoggerFactory.getLogger(PlayerController.class);
     
     PlayerController(PlayerRepository repository){
