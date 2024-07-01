@@ -12,11 +12,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.magic.demo.Deck.Deck;
+import com.magic.demo.Deck.DeckRepository;
 
 @RestController
 public class PlayerController {
 
     private PlayerRepository repository;
+    private DeckRepository deckRepository;
     public Logger log = LoggerFactory.getLogger(PlayerController.class);
     
     PlayerController(PlayerRepository repository){
@@ -28,16 +30,22 @@ public class PlayerController {
         return repository.findAll();
     }
 
+    @GetMapping("/players/{id}")
+    Player findById(@PathVariable Long id) {
+        return repository.findById(id).get();
+    }
+
     @PostMapping("/players")
     Player newPlayer(@RequestBody Player newPlayer) {
         return repository.save(newPlayer);
     }
 
     @PutMapping("/players/{id}")
-    Player updatePlayer(@PathVariable Long id, @RequestBody List<Deck> deckList){
-        repository.getReferenceById(id).setDeckList(deckList);
+    Player updatePlayer(@PathVariable Long id, @RequestBody Player newPlayer){
+        repository.findById(id).get().setUserName(newPlayer.getUserName());
+        repository.findById(id).get().setDeckList(newPlayer.getDeckList());
+        return repository.findById(id).get();
 
-        return repository.getReferenceById(id);
     }
 
     @DeleteMapping("players/{id}")

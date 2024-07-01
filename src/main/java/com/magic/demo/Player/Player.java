@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.magic.demo.Deck.Deck;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -16,7 +17,7 @@ public class Player {
     @GeneratedValue Long id;
     
     private String userName;
-    @OneToMany
+    @OneToMany(cascade=CascadeType.ALL)
     private List<Deck> deckList;
 
     public List<Deck> getDeckList() {
