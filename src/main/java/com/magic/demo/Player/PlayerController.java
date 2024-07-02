@@ -33,15 +33,16 @@ public class PlayerController {
 
     @PostMapping("/players")
     Player newPlayer(@RequestBody Player newPlayer) {
+        log.info(newPlayer.toString());
         return repository.save(newPlayer);
     }
 
     @PutMapping("/players/{id}")
     Player updatePlayer(@PathVariable Long id, @RequestBody Player newPlayer){
+        log.info(newPlayer.toString());
         repository.findById(id).get().setUserName(newPlayer.getUserName());
         repository.findById(id).get().setDeckList(newPlayer.getDeckList());
         return repository.findById(id).get();
-
     }
 
     @DeleteMapping("players/{id}")

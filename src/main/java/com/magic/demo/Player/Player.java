@@ -39,4 +39,15 @@ public class Player {
         this.id = id;
     }
 
+    @Override
+    public String toString() {
+        String deckAgg = null;
+        int i = 0;
+        while(this.getDeckList().get(i) != null){
+            deckAgg = deckAgg + this.deckList.get(i).getFormat();
+            i++;
+        }
+        String agg = this.id + " " + this.userName + deckAgg;
+        return agg;
+    }
 }
