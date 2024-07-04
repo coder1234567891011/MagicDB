@@ -36,7 +36,7 @@ public class PlayerController {
         log.info(newPlayer.toString());
         return repository.save(newPlayer);
     }
-
+    //My commit for the day
     @PutMapping("/players/{id}")
     Player updatePlayer(@PathVariable Long id, @RequestBody Player newPlayer){
         log.info(newPlayer.toString());
